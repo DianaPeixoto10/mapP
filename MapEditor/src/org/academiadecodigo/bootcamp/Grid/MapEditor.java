@@ -1,16 +1,21 @@
 package org.academiadecodigo.bootcamp.Grid;
 
+import java.io.FileWriter;
+
 /**
  * Created by codecadet on 11/06/2018.
  */
 public class MapEditor {
 
+    private FileManager fileManager;
     private Grid grid;
     private Square square;
 
     public MapEditor() {
         grid = new Grid();
         square = new Square();
+        save();
+        load();
     }
 
     public void paintGridCell() {
@@ -55,10 +60,10 @@ public class MapEditor {
     }
 
     public void save() {
-
+        fileManager.read();
     }
 
     public void load() {
-
+        fileManager.write();
     }
 }

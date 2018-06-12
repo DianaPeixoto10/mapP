@@ -14,8 +14,7 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
  */
 public class Grid {
 
-    private int col;
-    private int row;
+
     private Cell[][] grid;
 
     public Grid() {
@@ -23,9 +22,9 @@ public class Grid {
         gridConstructor();
     }
     public void gridConstructor() {
-        for (row = 0; row < grid.length; row++) {
-            for (col = 0; col < grid.length; col++) {
-                grid[row][col] = new Cell(row, col);
+        for (int col = 0; col < grid.length; col++) {
+            for (int row = 0; row < grid.length; row++) {
+                grid[row][col] = new Cell(col, row);
             }
         }
     }
@@ -33,14 +32,6 @@ public class Grid {
     public void paintCell(int row, int col) {
         grid[row][col].paint();
 
-    }
-
-    public int getRow() {
-        return row;
-    }
-
-    public int getCol() {
-        return col;
     }
 
 }

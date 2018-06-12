@@ -14,16 +14,12 @@ public class Cell {
     private int col;
 
 
-    public Cell(int row, int col) {
-        this.row = row;
+    public Cell(int col, int row) {
         this.col = col;
-        cell = new Rectangle(row * cellSize, col * cellSize, cellSize, cellSize);
+        this.row = row;
+        cell = new Rectangle(col * cellSize, row * cellSize, cellSize, cellSize);
         cell.setColor(Color.BLACK);
         cell.draw();
-    }
-
-    public int getCellSize() {
-        return cellSize;
     }
 
     public int getCol() {

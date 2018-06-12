@@ -9,29 +9,29 @@ import org.academiadecodigo.simplegraphics.graphics.*;
 public class Square extends Cell {
 
     public Square() {
-        super(0, 0);
+        super(0,0);
         cell.setColor(Color.MAGENTA);
         cell.fill();
     }
 
     public void moveRight() {
         cell.translate(cellSize, 0);
-        setCol();
+        setCol(getCol() + 1);
     }
 
     public void moveLeft() {
         cell.translate(-cellSize, 0);
-        setCol();
+        setCol(getCol() - 1);
     }
 
     public void moveUp() {
         cell.translate(0, -cellSize);
-        setRow();
+        setRow(getRow() - 1);
     }
 
     public void moveDown() {
         cell.translate(0, cellSize);
-        setRow(getRow());
+        setRow(getRow() + 1);
     }
 
     public void setColorToBlue() {
