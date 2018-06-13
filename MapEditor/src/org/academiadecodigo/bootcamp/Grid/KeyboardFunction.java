@@ -59,6 +59,16 @@ public class KeyboardFunction implements KeyboardHandler {
         setColorToGreen.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         setColorToGreen.setKey(KeyboardEvent.KEY_G);
 
+        KeyboardEvent save = new KeyboardEvent();
+        setColorToGreen.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        setColorToGreen.setKey(KeyboardEvent.KEY_S);
+
+        KeyboardEvent load = new KeyboardEvent();
+        setColorToGreen.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        setColorToGreen.setKey(KeyboardEvent.KEY_L);
+
+        keyboard.addEventListener(save);
+        keyboard.addEventListener(load);
         keyboard.addEventListener(setColorToRed);
         keyboard.addEventListener(setColorToGreen);
         keyboard.addEventListener(setColorToBlue);
@@ -74,15 +84,15 @@ public class KeyboardFunction implements KeyboardHandler {
     public void keyPressed(KeyboardEvent keyboardEvent) {
         switch (keyboardEvent.getKey()) {
             case KeyboardEvent.KEY_LEFT:
-               mapEditor.moveSquare(Direction.LEFT);
+                mapEditor.moveSquare(Direction.LEFT);
                 break;
 
             case KeyboardEvent.KEY_RIGHT:
-               mapEditor.moveSquare(Direction.RIGHT);
+                mapEditor.moveSquare(Direction.RIGHT);
                 break;
 
             case KeyboardEvent.KEY_UP:
-               mapEditor.moveSquare(Direction.UP);
+                mapEditor.moveSquare(Direction.UP);
                 break;
 
             case KeyboardEvent.KEY_DOWN:
@@ -107,6 +117,14 @@ public class KeyboardFunction implements KeyboardHandler {
 
             case KeyboardEvent.KEY_SPACE:
                 mapEditor.paintGridCell();
+
+            case KeyboardEvent.KEY_S:
+                mapEditor.save();
+                break;
+
+            case KeyboardEvent.KEY_L:
+                mapEditor.load();
+                break;
         }
     }
 

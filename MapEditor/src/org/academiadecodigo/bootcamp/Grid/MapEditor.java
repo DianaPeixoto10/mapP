@@ -59,7 +59,7 @@ public class MapEditor {
         }
     }
 
-    public void save() {
+   public void save() {
         fileManager.read();
     }
 

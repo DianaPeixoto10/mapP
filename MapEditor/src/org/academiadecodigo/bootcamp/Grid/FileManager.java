@@ -8,16 +8,17 @@ import java.util.Map;
  */
 public class FileManager implements Serializable {
 
-        MapEditor mapEditor
-        ObjectInputStream input;
-        ObjectOutputStream output;
+        MapEditor mapEditor;
+        FileReader fileReader;
+        FileWriter fileWriter;
+
 
         public void read() throws IOException{
-                MapEditor mapEditor =
+                fileReader.read();
         }
 
         public void write() {
-            output =
+                fileWriter.write(int c);
         }
 
 }
