@@ -1,17 +1,20 @@
 package org.academiadecodigo.bootcamp.Grid;
 
 import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Serializable;
 
 /**
  * Created by codecadet on 11/06/2018.
  */
-public class MapEditor {
+public class MapEditor implements Serializable {
 
     private FileManager fileManager;
     private Grid grid;
     private Square square;
 
     public MapEditor() {
+        fileManager = new FileManager();
         grid = new Grid();
         square = new Square();
         save();
@@ -59,11 +62,11 @@ public class MapEditor {
         }
     }
 
-   public void save() {
-        fileManager.read();
+    public void save() {
+            fileManager.read();
     }
 
-    public void load() {
-        fileManager.write();
+        public void load () {
+                fileManager.write();
+        }
     }
-}
