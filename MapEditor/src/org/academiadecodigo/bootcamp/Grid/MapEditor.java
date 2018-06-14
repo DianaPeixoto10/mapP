@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * Created by codecadet on 11/06/2018.
  */
-public class MapEditor implements Serializable {
+public class MapEditor {
 
     private FileManager fileManager;
     private Grid grid;

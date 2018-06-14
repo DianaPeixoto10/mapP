@@ -9,9 +9,9 @@ import java.util.Map;
  * Created by codecadet on 11/06/2018.
  */
 
-public class FileManager implements Serializable {
+public class FileManager {
 
-    MapEditor mapEditor;
+    /*MapEditor mapEditor;
 
     File file = new File("/src/paint");
     FileInputStream inputStream;
@@ -54,30 +54,27 @@ public class FileManager implements Serializable {
 
         }
     }
-}
+}*/
 
+    File file;
+    FileReader fileReader;
+    BufferedReader bufferedReader;
 
-
-
-   /* FileInputStream fileReader;
-    FileOutputStream fileWriter;
-
+    FileWriter fileWriter;
+    BufferedWriter bufferedWriter;
 
     public void read() {
-        try {
-            fileReader = new FileInputStream("Paint");
-            int b = fileReader.read();
-            if (b == -1) {
-                fileReader.close();
-            }
 
-            byte[] buffer = new byte[1024];
+        try {
+            fileReader = new FileReader(file = new File("resources/Paint.txt"));
+            bufferedReader = new BufferedReader(fileReader);
+
+            char[] buffer = new char[1024];
             int num = fileReader.read(buffer);
 
-            if (num != -1) {
-                System.out.println("I have read this may bytes: " + num);
-            }
+            System.out.println(num);
 
+            bufferedReader.close();
             fileReader.close();
 
         } catch (IOException ex) {
@@ -87,14 +84,16 @@ public class FileManager implements Serializable {
 
     public void write() {
         try {
-            fileWriter = new FileOutputStream("Paint");
-            byte b = 0x37;
-            fileWriter.write(b);
-            byte[] buffer = .getBytes();
-            fileWriter.write(buffer);
-            fileWriter.close();
+            String text = new String();
+            fileWriter = new FileWriter("resources/Paint.txt");
+            bufferedWriter = new BufferedWriter(fileWriter);
+
+            bufferedWriter.write(text);
+            bufferedWriter.close();
+
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
-        }*/
-
+        }
+    }
+}
 
