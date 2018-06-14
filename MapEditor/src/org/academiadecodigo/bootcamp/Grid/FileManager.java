@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public class FileManager implements Serializable {
 
-        MapEditor mapEditor
+        MapEditor mapEditor;
         ObjectInputStream input;
         ObjectOutputStream output;
 
