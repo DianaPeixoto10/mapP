@@ -3,6 +3,8 @@ package org.academiadecodigo.bootcamp.Grid;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
+import java.io.Serializable;
+
 /**
  * Created by codecadet on 08/06/2018.
  */

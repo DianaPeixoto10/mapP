@@ -9,11 +9,12 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 
+import java.io.Serializable;
+
 /**
  * Created by codecadet on 08/06/2018.
  */
-public class Grid {
-
+public class Grid implements Serializable {
 
     private Cell[][] grid;
 
