@@ -14,7 +14,7 @@ import java.io.Serializable;
 /**
  * Created by codecadet on 08/06/2018.
  */
-public class Grid implements Serializable {
+public class Grid {
 
     private Cell[][] grid;
 

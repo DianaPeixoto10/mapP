@@ -8,55 +8,58 @@ import java.util.Map;
 /**
  * Created by codecadet on 11/06/2018.
  */
+
 public class FileManager implements Serializable {
 
+    MapEditor mapEditor;
 
-    InputStream inputStream;
-    OutputStream outputStream;
+    File file = new File("/src/paint");
+    FileInputStream inputStream;
+    ObjectInputStream objectInputStream;
+    FileOutputStream outputStream;
+    ObjectOutputStream objectOutputStream;
 
     public void write() {
         try {
             MapEditor mapEditor = new MapEditor();
-            outputStream = System.out;
-            ObjectOutputStream objectInputStream = new ObjectOutputStream(outputStream);
-            objectInputStream.writeObject(mapEditor);
-            objectInputStream.close();
-            outputStream.close();
+            outputStream = new FileOutputStream(file);
+            objectOutputStream = new ObjectOutputStream(outputStream);
+
+            objectOutputStream.writeObject(mapEditor);
+            objectOutputStream.flush();
+            objectOutputStream.close();
+
+        } catch (FileNotFoundException fn) {
+            fn.printStackTrace();
         } catch (IOException ex) {
-            System.out.println(ex.getMessage());
+            ex.printStackTrace();
         }
     }
 
     public void read() {
+
         try {
-            inputStream = new FileInputStream("src/Paint.ser");
-            ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
-            MapEditor mapEditor = (MapEditor) objectInputStream.readObject();
-            System.out.println(mapEditor);
+            inputStream = new FileInputStream(file);
+            objectInputStream = new ObjectInputStream(inputStream);
+
+            mapEditor = (MapEditor)objectInputStream.readObject();
             objectInputStream.close();
-            inputStream.close();
+
+        } catch (FileNotFoundException fn) {
+            fn.printStackTrace();
         } catch (IOException ex) {
-            System.out.println(ex.getMessage());
+            ex.printStackTrace();
         } catch (ClassNotFoundException cf) {
-            System.out.println(cf.getMessage());
+            cf.printStackTrace();
 
         }
-
     }
+}
 
 
 
 
-
-
-
-
-
-
-
-
-
-    /* FileInputStream fileReader;
+   /* FileInputStream fileReader;
     FileOutputStream fileWriter;
 
 
@@ -93,5 +96,5 @@ public class FileManager implements Serializable {
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }*/
-    }
+
 
